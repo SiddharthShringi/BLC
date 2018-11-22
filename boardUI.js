@@ -1,0 +1,1 @@
+document.body.onload = newBoard.displayBoard();
