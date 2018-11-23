@@ -1,11 +1,13 @@
-function List(id, name, boardName) {
-	this.id = id;
-	this.name = name;
-	this.boardName = boardName;
-	this.cards = [];
-}
-List.prototype.addCard = function (name) {
-	let id = this.cards.length;
-	let newCard = new Card(id, name, this.name);
-	this.cards.push(newCard);
+class List {
+	constructor(title, board, index) {
+		this.title = title;
+		this.board = board;
+		this.index = index;
+
+		this.node = createNode('div');
+		this.node.classList.add('list');
+		this.listTitleNode = createNode('h5');
+		this.listTitleNode.textContent = this.title;
+		this.node.appendChild(this.listTitleNode);
+	}
 }
