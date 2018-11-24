@@ -15,7 +15,7 @@ class Board {
 		this.node.appendChild(this.titleNode);
 
 		this.listForm = listForm();
-		this.lists.push(new List('Add a list', this, 0));
+		this.lists.push(new List('Add a list', this, 0, true));
 		this.lists.forEach(list => {
 			this.listNodes.appendChild(list.node)
 		});
@@ -26,6 +26,7 @@ class Board {
 		console.log(this.listNodes);
 	}
 }
+
 
 document.body.onload = function() {
 	var newBoard = new Board('Task Manager');
