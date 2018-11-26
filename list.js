@@ -12,16 +12,21 @@ class List {
 
 		this.cardNodes = createNode('div');
 		this.cardNodes.classList.add('cards');
+		let cardId = 0;
+		this.nextCardId = function () {
+			return cardId++;
+		}
 
-		if(!dummyList) {
-			this.cards = [new Card('Add a card', this)];
+		if (!dummyList) {
+			this.cards = [new Card('Add a card', this, true)];
 			this.cardForm = cardForm();
-			this.cards[this.cards.length -1].node.appendChild(this.cardForm);
+			let lastCard = this.cards[this.cards.length - 1].node
+			lastCard.appendChild(this.cardForm);
 			this.cards.forEach(card => {
 				this.cardNodes.appendChild(card.node);
 			});
 			this.node.appendChild(this.cardNodes);
-			this.cards[this.cards.length -1].node.addEventListener('click', () => addCard(this));
+			this.cards[this.cards.length - 1].cardTitleNode.addEventListener('click', () => addCard(this));
 		}
 	}
 }
