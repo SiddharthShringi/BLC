@@ -21,7 +21,7 @@ class Board {
 		});
 		console.log(this.lists[this.lists.length - 1].node);
 		this.lists[this.lists.length - 1].node.appendChild(this.listForm);
-		this.lists[this.lists.length - 1].node.addEventListener('click', () => addList(this))
+		this.lists[this.lists.length - 1].listTitleNode.addEventListener('click', () => addList(this))
 		this.node.appendChild(this.listNodes)
 		console.log(this.listNodes);
 	}
